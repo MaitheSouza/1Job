@@ -81,6 +81,7 @@ export const Update = ({ heading }: { heading: string }) => {
 					setError('Houve um erro');
 				}
 			});
+		window.scrollTo({ top: 0 });
 		setTimeout(() => {
 			setSuccess(false);
 			setError(undefined);

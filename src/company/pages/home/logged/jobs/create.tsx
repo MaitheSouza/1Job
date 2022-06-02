@@ -16,16 +16,32 @@ import {
 	Textarea,
 	VStack,
 } from '@chakra-ui/react';
-import React, { FormEvent, useState } from 'react';
+import React, { FormEvent, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../../../utils/api';
+import { Recruiter } from '../../../../../utils/model/recruiter';
 import { transformForm } from '../../../../../utils/transformForm';
 import { NavBar } from '../../../../components/navbar';
 
 export const CreateJob = ({ heading }: { heading: string }) => {
-	const [{ access_token, id }] = useCookies();
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState<string | undefined>(undefined);
+	const [recruiters, setRecruiters] = useState<Recruiter[]>([]);
+	const [{ access_token, id }] = useCookies();
+	useEffect(() => {
+		api
+			.get(`/api/empresa/recrutadores/${id}`, {
+				headers: {
+					Authorization: access_token,
+				},
+			})
+			.then(({ data: { data } }) => {
+				setRecruiters(data);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
+	}, []);
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		setSuccess(false);
 		setError(undefined);
@@ -51,6 +67,7 @@ export const CreateJob = ({ heading }: { heading: string }) => {
 					setError('Houve um erro');
 				}
 			});
+		window.scrollTo({ top: 0 });
 		setTimeout(() => {
 			setSuccess(false);
 			setError(undefined);
@@ -222,7 +239,11 @@ export const CreateJob = ({ heading }: { heading: string }) => {
 						alignItems="center"
 						borderColor="brand.200"
 					>
-						<option value="">Gabriel</option>
+						{recruiters.map((recruiter) => (
+							<option key={recruiter.id} value={recruiter.id}>
+								{recruiter.nome}
+							</option>
+						))}
 					</Select>
 				</FormControl>
 

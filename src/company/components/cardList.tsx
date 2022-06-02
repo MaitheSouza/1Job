@@ -1,11 +1,14 @@
 import { Box, Flex, Heading, HStack, Icon, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { AiOutlineUser } from 'react-icons/ai';
 import {
 	HiOutlineCurrencyDollar,
 	HiOutlineLocationMarker,
 } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../utils/api';
+import { Recruiter } from '../../utils/model/recruiter';
 
 export const CardList = ({
 	job_title,
@@ -28,10 +31,29 @@ export const CardList = ({
 	description: string;
 	path: string;
 }) => {
+	const [{ access_token, id }, setCookie] = useCookies();
+	const [name, setName] = useState('Carregando...');
 	const navigate = useNavigate();
 	const goTo = () => {
 		navigate(path);
 	};
+	useEffect(() => {
+		api
+			.get(`/api/recrutadores/${recrutador_responsavel}`, {
+				headers: {
+					Authorization: access_token,
+				},
+			})
+			.then((success) => {
+				const {
+					data: { data },
+				}: { data: { data: Recruiter } } = success;
+				setName(data.nome);
+			})
+			.catch((error) => {
+				setName('-');
+			});
+	}, []);
 	return (
 		<Flex
 			onClick={goTo}
@@ -69,7 +91,7 @@ export const CardList = ({
 					</Text>
 					<Text display="inline-flex" gap={1} alignItems="center">
 						<Icon as={AiOutlineUser} w={5} h={5} color="brand.200" />
-						{recrutador_responsavel}{' '}
+						{name}{' '}
 					</Text>
 				</HStack>
 			</Box>

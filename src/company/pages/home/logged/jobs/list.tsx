@@ -96,7 +96,7 @@ export const Jobs = ({ heading }: { heading: string }) => {
 									remuneracao={remuneracao.toLocaleString('pt-BR', {
 										currency: 'BRL',
 									})}
-									recrutador_responsavel=""
+									recrutador_responsavel={recrutador_id}
 								/>
 							);
 						}
