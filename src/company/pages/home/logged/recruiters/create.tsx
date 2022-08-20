@@ -124,6 +124,7 @@ export const CreateRecruiters = ({ heading }: { heading: string }) => {
 						CPF
 					</FormLabel>
 					<Input
+						type="number"
 						maxLength={11}
 						w="100%"
 						_placeholder={{ opacity: 0.8, color: 'inherit' }}

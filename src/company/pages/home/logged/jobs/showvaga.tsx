@@ -16,7 +16,7 @@ import { Vaga } from '../../../../../utils/model/vaga';
 import { CardList } from '../../../../components/cardList';
 import { NavBar } from '../../../../components/navbar';
 
-export const Jobs = ({ heading }: { heading: string }) => {
+export const ShowJobs = ({ heading }: { heading: string }) => {
 	const [vagas, setVagas] = useState<Vaga[] | undefined>(undefined);
 	const [{ access_token, id }, setCookie] = useCookies();
 	useEffect(() => {
@@ -46,8 +46,11 @@ export const Jobs = ({ heading }: { heading: string }) => {
 				<BreadcrumbItem>
 					<BreadcrumbLink href="/company">Página Inicial</BreadcrumbLink>
 				</BreadcrumbItem>
-				<BreadcrumbItem isCurrentPage color="gray">
+				<BreadcrumbItem color="gray">
 					<BreadcrumbLink href="/company/jobs">Vagas em aberto</BreadcrumbLink>
+				</BreadcrumbItem>
+				<BreadcrumbItem isCurrentPage color="gray">
+					<BreadcrumbLink href="/company/jobs">Vagas {vagas}</BreadcrumbLink>
 				</BreadcrumbItem>
 			</Breadcrumb>
 
@@ -59,7 +62,7 @@ export const Jobs = ({ heading }: { heading: string }) => {
 					pt={4}
 					alignItems="flex-start"
 				>
-					<Text>Aqui estão as vagas que estão em aberto no momento:</Text>
+					<Text>Vaga UX Designer</Text>
 				</VStack>
 
 				<VStack

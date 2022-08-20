@@ -10,6 +10,7 @@ import { Login1 } from './company/Login';
 import { Logged } from './company/pages/home/logged/home';
 import { CreateJob } from './company/pages/home/logged/jobs/create';
 import { Jobs } from './company/pages/home/logged/jobs/list';
+import { ShowJobs } from './company/pages/home/logged/jobs/showvaga';
 import { CreateRecruiters } from './company/pages/home/logged/recruiters/create';
 import { DeleteRecruiter } from './company/pages/home/logged/recruiters/delete';
 import { Recruiters } from './company/pages/home/logged/recruiters/manage';
@@ -51,6 +52,7 @@ export const App = () => {
 						<Route path="jobs">
 							<Route path="" element={<Jobs heading="" />} />
 							<Route path="create" element={<CreateJob heading="" />} />
+							<Route path="show" element={<ShowJobs heading="" />} />
 						</Route>
 					</Fragment>
 				)}
