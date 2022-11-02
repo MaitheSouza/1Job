@@ -11,7 +11,7 @@ import {
 	InputLeftAddon,
 	Link,
 } from '@chakra-ui/react';
-import React, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { api } from '../../../utils/api';
 import { transformForm } from '../../../utils/transformForm';
 
@@ -55,7 +55,7 @@ export const LandingCadastro = ({ heading }: { heading: string }) => {
 			>
 				<HStack
 					px={24}
-					color="brand.200"
+					color="black"
 					spacing={4}
 					pb={4}
 					w="100%"

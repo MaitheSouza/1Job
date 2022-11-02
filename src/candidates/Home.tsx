@@ -1,27 +1,32 @@
-import { Button, Flex, HStack, Link } from '@chakra-ui/react';
-import React, { Fragment } from 'react';
+import { Box, Button, Flex, HStack, Link } from '@chakra-ui/react';
+import { Fragment } from 'react';
 import { Footer } from '../candidates/components/footer';
 import { Header } from '../candidates/components/header';
 import { Landing } from '../candidates/pages/home/landing';
 
 export const Home = () => (
-	<Fragment>
+	<Box
+		background="
+		linear-gradient(
+		90deg,
+		rgba(10, 186, 181, 1) 0%,
+		rgba(0, 119, 182, 1) 100%
+	)"
+	>
 		<Header>
 			<Fragment>
-				<HStack align="center" flex={1} color="whiteAlpha.700" spacing={4}>
-					<Link href="/company">Empresas</Link>
+				<HStack px={8} flex={1} color="whiteAlpha.700" spacing={20}>
+					<Link href="/company"> Para Empresas</Link>
 					<Link href="#jobs">Vagas</Link>
 					<Link href="#journey">Jornada</Link>
 				</HStack>
 				<Flex alignItems="flex-end" justifyContent="space-between">
-					<HStack spacing={2}>
+					<HStack>
 						<Link href="/login" color="whiteAlpha.800">
-							<Button variant="outline" px={2}>
-								Entrar
-							</Button>
+							<Button variant="ghost">Entrar</Button>
 						</Link>
-						<Link href="/cadastro" color="whiteAlpha.800">
-							<Button bg="brand.100" variant="solid" px={2}>
+						<Link pr={10} href="/cadastro" color="whiteAlpha.800">
+							<Button bg="brand.100" variant="ghost">
 								Cadastrar
 							</Button>
 						</Link>
@@ -32,5 +37,5 @@ export const Home = () => (
 		<Landing />
 
 		<Footer />
-	</Fragment>
+	</Box>
 );

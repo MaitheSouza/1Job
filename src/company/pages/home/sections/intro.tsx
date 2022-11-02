@@ -1,14 +1,4 @@
-import {
-	AspectRatio,
-	Box,
-	Flex,
-	Heading,
-	Img,
-	Text,
-	VStack,
-} from '@chakra-ui/react';
-import React from 'react';
-import intro from '../../../../candidates/images/intro.svg';
+import { Box, Flex, Heading, Text, VStack } from '@chakra-ui/react';
 
 export const Intro = () => {
 	return (
@@ -24,16 +14,6 @@ export const Intro = () => {
 					</Text>
 				</VStack>
 			</Box>
-			<Flex alignItems="flex-end">
-				<AspectRatio
-					className="img-landing"
-					ratio={12 / 11}
-					width="400px"
-					height="400px"
-				>
-					<Img src={intro} />
-				</AspectRatio>
-			</Flex>
 		</Flex>
 	);
 };

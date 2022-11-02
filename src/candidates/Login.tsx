@@ -1,5 +1,4 @@
 import { HStack, VStack } from '@chakra-ui/react';
-import React from 'react';
 import { useCookies } from 'react-cookie';
 import { Navigate } from 'react-router-dom';
 import { Header } from '../candidates/components/header';
@@ -10,7 +9,7 @@ export const Login = () => {
 	if (access_token && email) return <Navigate to="/" />;
 	return (
 		<VStack id="jobs" alignItems="center" w="100%">
-			<Header />
+			<Header bg="blue" />
 			<HStack
 				w="100%"
 				align="center"

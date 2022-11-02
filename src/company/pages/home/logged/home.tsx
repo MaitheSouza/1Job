@@ -11,7 +11,6 @@ import {
 	InputRightElement,
 	VStack,
 } from '@chakra-ui/react';
-import React from 'react';
 import { BsBagPlus, BsPeople } from 'react-icons/bs';
 import { Card } from '../../../components/card';
 import { NavBar } from '../../../components/navbar';
@@ -68,6 +67,7 @@ export const Logged = () => {
 								alignItems="center"
 								fontSize={15}
 								textAlign="center"
+								py={4}
 							>
 								Olá! Procure por suas vagas abertas, crie novas vagas e gerencie
 								recrutadores.

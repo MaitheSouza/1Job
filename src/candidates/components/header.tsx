@@ -1,27 +1,29 @@
 import { Flex, Link } from '@chakra-ui/react';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useLocation } from 'react-router-dom';
 
-export const Header: FC = ({ children }) => {
+type Props = { bg?: 'white' | 'blue' };
+
+export const Header: FC<Props> = ({ children, bg = 'transparent' }) => {
 	const { pathname } = useLocation();
 	const pathHome = pathname.includes('company') ? '/company' : '/';
 	return (
 		<Flex
-			position="relative"
-			width="full"
-			bg="transparent"
-			px={5}
-			pt={5}
-			pb={8}
-			h="100%"
-			maxH="300px"
+			px={8}
+			gap={8}
+			py={5}
 			wrap="wrap"
-			justifySelf="flex-start"
-			alignSelf="flex-start"
 			alignItems="center"
-			justifyContent="space-between"
 			id="home"
 			as="header"
+			width="100%"
+			background={
+				bg === 'transparent'
+					? 'transparent'
+					: bg === 'white'
+					? 'white'
+					: ' linear-gradient( 90deg, rgba(10, 186, 181, 1) 0%, rgba(0, 119, 182, 1) 100% )'
+			}
 		>
 			<Flex
 				w="100%"
@@ -32,10 +34,10 @@ export const Header: FC = ({ children }) => {
 				justifyContent="space-between"
 				zIndex={4}
 			>
-				<Link alignItems="center" href={pathHome}>
+				<Link px={8} alignItems="center" href={pathHome}>
 					<svg
-						width="40"
-						height="28"
+						width="50"
+						height="30"
 						viewBox="0 0 80 56"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,4 @@
 import { Flex, Icon, Text } from '@chakra-ui/react';
-import React from 'react';
 import { BiCheckDouble } from 'react-icons/bi';
 
 export const Commitment = ({ text }: { text: string }) => {

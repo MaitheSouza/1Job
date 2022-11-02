@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Icon, Link, Text } from '@chakra-ui/react';
-import React from 'react';
 import { IconType } from 'react-icons';
 import { BsSearch } from 'react-icons/bs';
 
@@ -14,14 +13,15 @@ export const ServiceCard = ({
 }) => {
 	return (
 		<Flex
+			boxShadow="0px 0px 5px 0px #D3CBC2"
 			flexDirection="column"
-			bg="blue.50"
 			p={7}
 			w="full"
-			height="100%"
+			maxW="30%"
 			maxH="100%"
 			justifyContent="space-between"
 			align="center"
+			ml="20%"
 		>
 			<Icon h={20} w={20} as={icon} />
 			<Box flex={1} h="100%">

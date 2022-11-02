@@ -13,7 +13,7 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import React, { FormEvent } from 'react';
+import { FormEvent } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../utils/api';
 import { transformForm } from '../../../utils/transformForm';
@@ -77,7 +77,6 @@ export const Landing = ({ heading }: { heading: string }) => {
 			<Box
 				as="form"
 				flex={1}
-				h="100%"
 				className="form"
 				onSubmit={(e: any) => handleSubmit(e)}
 			>

@@ -1,24 +1,12 @@
 import { Box, Flex, Heading, HStack } from '@chakra-ui/react';
-import React from 'react';
 import { RiComputerLine } from 'react-icons/ri';
 import { ServiceCard } from '../../../components/serviceCard';
 
 export const Services = () => {
 	return (
-		<Box id="jobs" w="full" py="50px" px={4} alignItems="center">
-			<Flex
-				justifyContent="space-between"
-				alignItems="center"
-				align="center"
-				pb="40px"
-			>
-				<Heading
-					color="black"
-					alignItems="center"
-					fontSize={32}
-					letterSpacing="3px"
-					textAlign="center"
-				>
+		<Box id="jobs" w="full" px={4} alignItems="center" bg="white">
+			<Flex justifyContent="center" alignItems="center">
+				<Heading color="black" fontSize={32} textAlign="center" py={10}>
 					Vagas disponíveis nas seguintes áreas:
 				</Heading>
 			</Flex>
@@ -27,10 +15,11 @@ export const Services = () => {
 				align="flex-start"
 				justify="flex-start"
 				h="fit-content"
-				spacing={10}
+				spacing={8}
 				overflowX="auto"
-				py={4}
+				py={10}
 				px={2}
+				pb={50}
 			>
 				<ServiceCard
 					icon={RiComputerLine}

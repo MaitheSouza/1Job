@@ -9,7 +9,7 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../../../utils/api';
 import { Vaga } from '../../../../../utils/model/vaga';
