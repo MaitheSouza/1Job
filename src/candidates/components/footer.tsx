@@ -32,8 +32,7 @@ export const Footer = () => {
 
 				<Box py={8} px={2} gap={8} justifyContent="space-between">
 					<Text fontSize={14}>
-						Copyright © 2022 Diversas Vagas. Todos os direitos reservados.
-						Termos de uso
+						Copyright © 2022 1Job. Todos os direitos reservados. Termos de uso
 					</Text>
 				</Box>
 			</Box>
