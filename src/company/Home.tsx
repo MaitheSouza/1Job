@@ -10,8 +10,7 @@ export const Company = () => (
 			<Fragment>
 				<HStack px={10} flex={1} color="whiteAlpha.700" spacing={20}>
 					<Link href="/">Para Estudantes</Link>
-					<Link href="#jobs">Vagas</Link>
-					<Link href="#journey">Jornada</Link>
+					<Link href="#jobs">Recrutamento</Link>
 				</HStack>
 				<Flex alignItems="flex-end" justifyContent="space-between">
 					<HStack spacing={2}>
