@@ -15,7 +15,7 @@ export const Home = () => (
 	>
 		<Header>
 			<Fragment>
-				<HStack px={8} flex={1} color="whiteAlpha.700" spacing={20}>
+				<HStack px={10} flex={1} color="whiteAlpha.700" spacing={20}>
 					<Link href="/company"> Para Empresas</Link>
 					<Link href="#jobs">Vagas</Link>
 					<Link href="#journey">Jornada</Link>

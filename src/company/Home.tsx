@@ -2,13 +2,13 @@ import { Box, Button, Flex, HStack, Link } from '@chakra-ui/react';
 import { Fragment } from 'react';
 import { Header } from '../candidates/components/header';
 import { Landing } from '../company/pages/home/landing';
-import { Footer } from './components/footer';
+import { Footer } from './components/Intro/footer';
 
 export const Company = () => (
 	<Box>
 		<Header bg="blue">
 			<Fragment>
-				<HStack px={8} flex={1} color="whiteAlpha.700" spacing={20}>
+				<HStack px={10} flex={1} color="whiteAlpha.700" spacing={20}>
 					<Link href="/">Para Estudantes</Link>
 					<Link href="#jobs">Vagas</Link>
 					<Link href="#journey">Jornada</Link>

@@ -17,11 +17,11 @@ export const ServiceCard = ({
 			flexDirection="column"
 			p={7}
 			w="full"
-			maxW="30%"
+			maxW="40%"
 			maxH="100%"
 			justifyContent="space-between"
 			align="center"
-			ml="20%"
+			ml="8%"
 		>
 			<Icon h={20} w={20} as={icon} />
 			<Box flex={1} h="100%">

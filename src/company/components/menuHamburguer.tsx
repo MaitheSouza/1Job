@@ -17,7 +17,7 @@ import {
 	VStack,
 	WrapItem,
 } from '@chakra-ui/react';
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useCookies } from 'react-cookie';
 import { AiOutlineHome } from 'react-icons/ai';
 import { BiLogOut } from 'react-icons/bi';
@@ -40,7 +40,7 @@ export const NavBar = () => {
 	};
 	return (
 		<Box w="100%">
-			<Header>
+			<Header bg="blue">
 				<Button
 					backgroundColor="transparent"
 					_hover={{ backgroundColor: 'transparent' }}
@@ -72,16 +72,21 @@ export const NavBar = () => {
 							/>
 							<DrawerHeader
 								overflowY="hidden"
-								bg="brand.200"
+								bg="linear-gradient(
+									90deg,
+									rgba(10, 186, 181, 1) 0%,
+									rgba(0, 119, 182, 1) 100%
+								);"
 								pb={36}
 								fontSize={20}
 								color="black"
 								boxShadow="1px 1px 2px gray"
 							>
-								<WrapItem>
+								<WrapItem pt={2}>
 									<Avatar src="https://bit.ly/dan-abramov" />
+									<Box p={3}>DMS Tecnologia</Box>
 								</WrapItem>
-								<VStack spacing="24px" pt={10}>
+								<VStack spacing="24px" pt={6}>
 									<Button w="80%">
 										<Link href="/company/update">Atualizar Dados</Link>
 									</Button>

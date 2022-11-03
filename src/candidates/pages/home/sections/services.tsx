@@ -18,7 +18,6 @@ export const Services = () => {
 				spacing={8}
 				overflowX="auto"
 				py={10}
-				px={2}
 				pb={50}
 			>
 				<ServiceCard

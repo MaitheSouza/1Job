@@ -13,7 +13,7 @@ import {
 } from '@chakra-ui/react';
 import { BsBagPlus, BsPeople } from 'react-icons/bs';
 import { Card } from '../../../components/card';
-import { NavBar } from '../../../components/navbar';
+import { NavBar } from '../../../components/menuHamburguer';
 
 export const Logged = () => {
 	return (

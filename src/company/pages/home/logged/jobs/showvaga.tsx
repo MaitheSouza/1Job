@@ -9,12 +9,12 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../../../utils/api';
 import { Vaga } from '../../../../../utils/model/vaga';
 import { CardList } from '../../../../components/cardList';
-import { NavBar } from '../../../../components/navbar';
+import { NavBar } from '../../../../components/menuHamburguer';
 
 export const ShowJobs = ({ heading }: { heading: string }) => {
 	const [vagas, setVagas] = useState<Vaga[] | undefined>(undefined);
@@ -50,7 +50,9 @@ export const ShowJobs = ({ heading }: { heading: string }) => {
 					<BreadcrumbLink href="/company/jobs">Vagas em aberto</BreadcrumbLink>
 				</BreadcrumbItem>
 				<BreadcrumbItem isCurrentPage color="gray">
-					<BreadcrumbLink href="/company/jobs">Vagas {vagas}</BreadcrumbLink>
+					<BreadcrumbLink href="/company/jobs/show">
+						Vagas {vagas}
+					</BreadcrumbLink>
 				</BreadcrumbItem>
 			</Breadcrumb>
 
@@ -73,7 +75,7 @@ export const ShowJobs = ({ heading }: { heading: string }) => {
 					overflowX="auto"
 					py={4}
 					px={2}
-					color="brand.200"
+					color="black"
 				>
 					{vagas.map(
 						({

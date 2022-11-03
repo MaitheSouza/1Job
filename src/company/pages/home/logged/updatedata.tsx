@@ -18,12 +18,12 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import React, { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../../utils/api';
 import { Company } from '../../../../utils/model/company';
 import { transformForm } from '../../../../utils/transformForm';
-import { NavBar } from '../../../components/navbar';
+import { NavBar } from '../../../components/menuHamburguer';
 
 export const Update = ({ heading }: { heading: string }) => {
 	const [success, setSuccess] = useState(false);

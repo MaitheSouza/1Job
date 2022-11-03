@@ -17,13 +17,13 @@ import {
 	Text,
 	VStack,
 } from '@chakra-ui/react';
-import React, { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { Navigate, useSearchParams } from 'react-router-dom';
 import { api } from '../../../../../utils/api';
 import { Recruiter } from '../../../../../utils/model/recruiter';
 import { transformForm } from '../../../../../utils/transformForm';
-import { NavBar } from '../../../../components/navbar';
+import { NavBar } from '../../../../components/menuHamburguer';
 
 export const UpdateRecruiter = ({ heading }: { heading: string }) => {
 	const [success, setSuccess] = useState(false);

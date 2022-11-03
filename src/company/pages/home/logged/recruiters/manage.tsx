@@ -19,11 +19,11 @@ import {
 	Tr,
 	VStack,
 } from '@chakra-ui/react';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { api } from '../../../../../utils/api';
 import { Recruiter } from '../../../../../utils/model/recruiter';
-import { NavBar } from '../../../../components/navbar';
+import { NavBar } from '../../../../components/menuHamburguer';
 
 export const Recruiters = ({ heading }: { heading: string }) => {
 	const [recruiters, setRecruiters] = useState<Recruiter[]>([]);

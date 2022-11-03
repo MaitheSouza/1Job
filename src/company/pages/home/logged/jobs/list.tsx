@@ -14,7 +14,7 @@ import { useCookies } from 'react-cookie';
 import { api } from '../../../../../utils/api';
 import { Vaga } from '../../../../../utils/model/vaga';
 import { CardList } from '../../../../components/cardList';
-import { NavBar } from '../../../../components/navbar';
+import { NavBar } from '../../../../components/menuHamburguer';
 
 export const Jobs = ({ heading }: { heading: string }) => {
 	const [vagas, setVagas] = useState<Vaga[] | undefined>(undefined);
