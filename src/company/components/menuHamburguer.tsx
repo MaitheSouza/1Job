@@ -74,9 +74,8 @@ export const NavBar = () => {
 								overflowY="hidden"
 								bg="linear-gradient(
 									90deg,
-									rgba(10, 186, 181, 1) 0%,
-									rgba(0, 119, 182, 1) 100%
-								);"
+									rgba(0, 119, 182, 1) 0%,
+									rgba(10, 186, 181, 1) 100%;)"
 								pb={36}
 								fontSize={20}
 								color="black"

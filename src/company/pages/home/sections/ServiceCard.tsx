@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, HStack } from '@chakra-ui/react';
+import { RiComputerLine } from 'react-icons/ri';
 import { ServiceCard } from '../../../components/Intro/serviceCard';
 
 export const Services = () => {
@@ -13,7 +14,7 @@ export const Services = () => {
 		>
 			<Box id="jobs" w="full" px={8} alignItems="start">
 				<Flex justifyContent="center" alignItems="start" pl={8}>
-					<Heading color="black" fontSize={32} textAlign="center" py={10}>
+					<Heading color="white" fontSize={32} textAlign="center" py={10}>
 						Ferramentas de recrutamento:
 					</Heading>
 				</Flex>
@@ -29,10 +30,12 @@ export const Services = () => {
 					pb={50}
 				>
 					<ServiceCard
+						icon={RiComputerLine}
 						heading="Recrutamento Interno"
 						description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 					/>
 					<ServiceCard
+						icon={RiComputerLine}
 						heading="Programas de Estágio e Trainee"
 						description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 					/>

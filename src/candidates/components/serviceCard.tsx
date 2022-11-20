@@ -13,19 +13,26 @@ export const ServiceCard = ({
 }) => {
 	return (
 		<Flex
-			boxShadow="0px 0px 5px 0px #D3CBC2"
+			boxShadow="0px 2px 5px 0px #2A4365"
+			borderRadius="10"
 			flexDirection="column"
-			p={7}
+			p={4}
+			pb={8}
 			w="full"
-			maxW="40%"
-			maxH="100%"
-			justifyContent="space-between"
+			maxW="25%"
 			align="center"
-			ml="8%"
+			ml="10px"
+			bg="white"
 		>
-			<Icon h={20} w={20} as={icon} />
-			<Box flex={1} h="100%">
-				<Heading color="blue.800" fontSize={20} letterSpacing="3px" pb="20px">
+			<Icon h={10} w={10} as={icon} />
+			<Box h="100%" w="100%">
+				<Heading
+					color="blue.800"
+					fontSize={20}
+					textAlign="center"
+					letterSpacing="3px"
+					pb="20px"
+				>
 					{heading}
 				</Heading>
 				<Text color="black">{description}</Text>

@@ -9,6 +9,7 @@ export const Header: FC<Props> = ({ children, bg = 'transparent' }) => {
 	const pathHome = pathname.includes('company') ? '/company' : '/';
 	return (
 		<Flex
+			boxShadow="2px 2px 10px 2px #D3CBC2"
 			px={8}
 			gap={8}
 			py={5}
@@ -22,7 +23,7 @@ export const Header: FC<Props> = ({ children, bg = 'transparent' }) => {
 					? 'transparent'
 					: bg === 'white'
 					? 'white'
-					: ' linear-gradient( 90deg, rgba(10, 186, 181, 1) 0%, rgba(0, 119, 182, 1) 100% )'
+					: ' linear-gradient( 90deg,rgba(0, 119, 182, 1) 0%, rgba(10, 186, 181, 1) 100%'
 			}
 		>
 			<Flex
@@ -33,11 +34,12 @@ export const Header: FC<Props> = ({ children, bg = 'transparent' }) => {
 				gap={4}
 				justifyContent="space-between"
 				zIndex={4}
+				ml={8}
 			>
 				<Link px={8} alignItems="center" href={pathHome}>
 					<svg
-						width="50"
-						height="30"
+						width="60"
+						height="40"
 						viewBox="0 0 80 56"
 						fill="none"
 						xmlns="http://www.w3.org/2000/svg"

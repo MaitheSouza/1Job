@@ -62,49 +62,51 @@ export const Jobs = ({ heading }: { heading: string }) => {
 					<Text>Aqui estão as vagas que estão em aberto no momento:</Text>
 				</VStack>
 
-				<VStack
-					w="100%"
-					align="center"
-					justify="center"
-					spacing={10}
-					overflowX="auto"
-					py={4}
-					px={2}
-					color="brand.200"
-				>
-					{vagas.map(
-						({
-							id,
-							titulo,
-							descricao,
-							quantidade,
-							area_id,
-							modalidade,
-							regime_contratual,
-							remuneracao,
-							recrutador_id,
-						}) => {
-							return (
-								<Link href="jobs/show">
-									<CardList
-										key={id}
-										path=""
-										job_title={titulo}
-										description={descricao}
-										qtd_vagas={quantidade}
-										area={area_id}
-										modalidade={modalidade}
-										regime_contratual={regime_contratual}
-										remuneracao={remuneracao.toLocaleString('pt-BR', {
-											currency: 'BRL',
-										})}
-										recrutador_responsavel={recrutador_id}
-									/>
-								</Link>
-							);
-						}
-					)}
-				</VStack>
+				<Box>
+					<VStack
+						boxShadow="1px 2px 5px 2px #D3CBC2"
+						w="100%"
+						align="center"
+						justify="center"
+						spacing={10}
+						py={4}
+						px={15}
+						bg="white"
+					>
+						{vagas.map(
+							({
+								id,
+								titulo,
+								descricao,
+								quantidade,
+								area_id,
+								modalidade,
+								regime_contratual,
+								remuneracao,
+								recrutador_id,
+							}) => {
+								return (
+									<Link href="jobs/show">
+										<CardList
+											key={id}
+											path=""
+											job_title={titulo}
+											description={descricao}
+											qtd_vagas={quantidade}
+											area={area_id}
+											modalidade={modalidade}
+											regime_contratual={regime_contratual}
+											remuneracao={remuneracao.toLocaleString('pt-BR', {
+												currency: 'BRL',
+											})}
+											recrutador_responsavel={recrutador_id}
+										/>
+									</Link>
+								);
+							}
+						)}
+					</VStack>
+				</Box>
 			</Box>
 		</Flex>
 	);
