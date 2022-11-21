@@ -1,46 +1,33 @@
 import { Box, Flex, Heading, HStack } from '@chakra-ui/react';
-import { RiComputerLine } from 'react-icons/ri';
 import { ServiceCard } from '../../../components/Intro/serviceCard';
 
 export const Services = () => {
 	return (
-		<Box
-			background="
-		linear-gradient(
-		90deg,
-		rgba(10, 186, 181, 1) 0%,
-		rgba(0, 119, 182, 1) 100%
-	)"
-		>
-			<Box id="jobs" w="full" px={8} alignItems="start">
-				<Flex justifyContent="center" alignItems="start" pl={8}>
-					<Heading color="white" fontSize={32} textAlign="center" py={10}>
-						Ferramentas de recrutamento:
-					</Heading>
-				</Flex>
-				<HStack
-					w="100%"
-					align="center"
-					justify="center"
-					h="fit-content"
-					spacing={8}
-					overflowX="auto"
-					py={10}
-					px={2}
-					pb={50}
-				>
-					<ServiceCard
-						icon={RiComputerLine}
-						heading="Recrutamento Interno"
-						description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-					/>
-					<ServiceCard
-						icon={RiComputerLine}
-						heading="Programas de Estágio e Trainee"
-						description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-					/>
-				</HStack>
-			</Box>
+		<Box bg="brand.200" id="jobs" w="full" alignItems="center" pb={10} pt={10}>
+			<Flex justifyContent="center" alignItems="center">
+				<Heading color="white" fontSize={32} textAlign="center" py={10}>
+					Ferramentas de recrutamento:
+				</Heading>
+			</Flex>
+			<HStack
+				w="100%"
+				alignSelf="center"
+				justifyContent="center"
+				spacing={8}
+				position="relative"
+				pb={50}
+			>
+				<ServiceCard
+					image="images/IconRecrutamentoInterno.png"
+					heading="Recrutamento Interno"
+					description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				/>
+				<ServiceCard
+					image="images/IconEstagio.png"
+					heading="Programas de Estágio, Trainee e Júnior"
+					description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+				/>
+			</HStack>
 		</Box>
 	);
 };
