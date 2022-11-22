@@ -23,7 +23,7 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { BiLogOut } from 'react-icons/bi';
 import { BsBagPlus, BsCardList, BsPeople } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
-import { Header } from '../../candidates/components/header';
+import { Header } from '../components/header';
 
 export const NavBar = () => {
 	const [, , removeCookie] = useCookies();
@@ -40,7 +40,7 @@ export const NavBar = () => {
 	};
 	return (
 		<Box w="100%">
-			<Header bg="blue">
+			<Header bg="white">
 				<Button
 					backgroundColor="transparent"
 					_hover={{ backgroundColor: 'transparent' }}
@@ -49,7 +49,7 @@ export const NavBar = () => {
 					role="navigation"
 					as={IconButton}
 					icon={<HamburgerIcon />}
-					color="white"
+					color="brand.200"
 					variant="ghost"
 					onClick={onOpen}
 					ref={btnRef}

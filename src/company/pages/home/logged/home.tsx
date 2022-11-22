@@ -2,7 +2,7 @@ import { SearchIcon } from '@chakra-ui/icons';
 import {
 	Box,
 	Button,
-	Flex,
+	Divider,
 	Heading,
 	HStack,
 	Input,
@@ -17,27 +17,29 @@ import { NavBar } from '../../../components/menuHamburguer';
 
 export const Logged = () => {
 	return (
-		<Flex gap={8} justifyContent="space-between" w="100%">
-			<VStack alignItems="center" w="100%">
-				<NavBar />
+		<Box gap={8} justifyContent="space-between">
+			<NavBar />
+			<Divider color="black" boxShadow="0px 2px 5px 0px #2A4365" />
+
+			<VStack bg="white" alignItems="center" justifyContent="center">
 				<Box as="form">
-					<HStack w="100%" color="black" gap={1} pt={10}>
+					<HStack pt={5}>
 						<InputGroup
-							margin={5}
-							w="100%"
-							maxW="800px"
-							pr={16}
-							boxShadow="1px 1px 2px gray"
+							m={8}
+							w="900px"
+							maxH="100vh"
+							boxShadow="0px 2px 5px 2px #D3CBC2"
 						>
 							<InputLeftAddon
 								as="label"
 								htmlFor="vaga"
 								children={<SearchIcon />}
+								bg="white"
 							/>
 							<Input
 								placeholder="Digite o nome da vaga"
 								w="100%"
-								color="black"
+								color="gray"
 								_placeholder={{ opacity: 0.8, color: 'inherit' }}
 								id="vaga"
 								name="vaga"
@@ -45,34 +47,21 @@ export const Logged = () => {
 							<InputRightElement width="4.5rem">
 								<Button
 									type="submit"
-									colorScheme="brand.100"
 									px={10}
-									color="whiteAlpha.900"
-									bg="brand.200"
+									color="white"
+									variant="ghost"
+									background="linear-gradient(to right, #0077B6, #0ABAB5)"
 								>
 									Buscar
 								</Button>
 							</InputRightElement>
 						</InputGroup>
 					</HStack>
-					<Box id="jobs" w="full" py={4} px={4} alignItems="center">
-						<Flex
-							justifyContent="space-between"
-							alignItems="center"
-							align="center"
-							pb={10}
-						>
-							<Heading
-								color="black"
-								alignItems="center"
-								fontSize={15}
-								textAlign="center"
-								py={4}
-							>
-								Olá! Procure por suas vagas abertas, crie novas vagas e gerencie
-								recrutadores.
-							</Heading>
-						</Flex>
+					<VStack id="jobs">
+						<Heading color="black" alignItems="flex-start" fontSize={15} py={4}>
+							Olá! {} Procure por suas vagas abertas, crie novas vagas e
+							gerencie recrutadores.
+						</Heading>
 						<HStack
 							w="100%"
 							align="center"
@@ -81,24 +70,23 @@ export const Logged = () => {
 							overflowX="auto"
 							py={4}
 							px={2}
-							color="brand.200"
 						>
 							<Card
 								path="/company/jobs/create"
 								icon={BsBagPlus}
-								heading=""
-								description="Criar uma nova vaga"
+								heading="Criar uma nova vaga"
+								description=""
 							/>
 							<Card
 								path="/company/recruiters"
 								icon={BsPeople}
-								heading=""
-								description="Gerenciar recrutadores"
+								heading="Gerenciar recrutadores"
+								description=" "
 							/>
 						</HStack>
-					</Box>
+					</VStack>
 				</Box>
 			</VStack>
-		</Flex>
+		</Box>
 	);
 };

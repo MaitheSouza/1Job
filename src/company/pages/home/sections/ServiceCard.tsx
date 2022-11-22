@@ -24,7 +24,7 @@ export const Services = () => {
 				/>
 				<ServiceCard
 					image="images/IconEstagio.png"
-					heading="Programas de Estágio, Trainee e Júnior"
+					heading="Programas de Estágio"
 					description="Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
 				/>
 			</HStack>

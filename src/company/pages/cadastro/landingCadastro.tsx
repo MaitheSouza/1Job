@@ -1,4 +1,3 @@
-import { EmailIcon, LockIcon } from '@chakra-ui/icons';
 import {
 	Box,
 	Button,
@@ -6,16 +5,24 @@ import {
 	FormControl,
 	FormLabel,
 	HStack,
+	Icon,
 	Input,
 	InputGroup,
 	InputLeftAddon,
+	InputRightElement,
 	Link,
+	Text,
 } from '@chakra-ui/react';
-import { FormEvent } from 'react';
+import React, { FormEvent } from 'react';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { BiLockAlt } from 'react-icons/bi';
+import { BsPersonCircle } from 'react-icons/bs';
 import { api } from '../../../utils/api';
 import { transformForm } from '../../../utils/transformForm';
 
 export const LandingCadastro = ({ heading }: { heading: string }) => {
+	const [show, setShow] = React.useState(false);
+	const handleClick = () => setShow(!show);
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		const inputs = document.querySelectorAll(
@@ -35,39 +42,21 @@ export const LandingCadastro = ({ heading }: { heading: string }) => {
 			});
 	};
 	return (
-		<Flex
-			flexDirection="column"
-			p={7}
-			w="full"
-			height="100%"
-			maxH="100%"
-			justifyContent="space-between"
-			id="cadastrar"
-		>
+		<Flex flexDirection="column" p={5} w="full" maxH="100%" id="cadastrar">
 			<Box
 				as="form"
 				className="form"
 				onSubmit={(e: any) => handleSubmit(e)}
-				w="100%"
-				maxW="500px"
 				flex={1}
-				h="100%"
 			>
-				<HStack
-					px={24}
-					color="black"
-					spacing={4}
-					pb={4}
-					w="100%"
-					justifyContent="space-between"
-					wrap="wrap"
-					py={8}
-				>
+				<HStack gap={5} justify="center" py={2}>
 					<Link href="login">Entrar</Link>
-					<Link href="cadastro">Cadastre-se</Link>
+					<Link className="g-text" href="cadastro">
+						Cadastre-se
+					</Link>
 				</HStack>
 
-				<FormControl w="100%" isRequired pt={4} pb={3}>
+				<FormControl isRequired>
 					<FormLabel htmlFor="razao_social">Razão Social</FormLabel>
 					<Input
 						placeholder="Digite a Razão Social"
@@ -114,7 +103,10 @@ export const LandingCadastro = ({ heading }: { heading: string }) => {
 				<FormControl w="100%" isRequired pb={3}>
 					<FormLabel htmlFor="email">E-mail</FormLabel>
 					<InputGroup w="100%">
-						<InputLeftAddon children={<EmailIcon />} />
+						<InputLeftAddon
+							bg="white"
+							children={<Icon className="svg-gradient" as={BsPersonCircle} />}
+						/>
 						<Input
 							placeholder="Digite seu e-mail"
 							w="100%"
@@ -125,40 +117,59 @@ export const LandingCadastro = ({ heading }: { heading: string }) => {
 						/>
 					</InputGroup>
 				</FormControl>
-				<FormControl w="100%" isRequired pb={3} size="md">
+				<FormControl isRequired pt={4} pb={5} size="md">
 					<FormLabel htmlFor="password">Senha</FormLabel>
-					<InputGroup w="100%">
-						<InputLeftAddon children={<LockIcon />} />
+					<InputGroup>
+						<InputLeftAddon
+							bg="white"
+							children={<Icon className="svg-gradient" as={BiLockAlt} />}
+						/>
 						<Input
 							placeholder="Digite sua senha"
 							w="100%"
 							_placeholder={{ opacity: 0.8, color: 'inherit' }}
 							id="password"
-							type={'password'}
+							type={show ? 'text' : 'password'}
 							px={4}
 							name="password"
 						/>
+						<InputRightElement width="5rem">
+							<Button size="sm" onClick={handleClick}>
+								{show ? 'Ocultar' : 'Mostrar'}
+							</Button>
+						</InputRightElement>
 					</InputGroup>
 				</FormControl>
 
-				<HStack
-					color="brand.200"
-					spacing={4}
-					w="100%"
-					py={3}
-					alignItems="center"
-					flexDirection="row"
-				></HStack>
-				<Flex flexDirection="column" alignItems="center">
+				<Flex flexDirection="column" borderRadius={8} alignItems="center">
 					<Button
 						type="submit"
-						colorScheme="teal"
-						variant="solid"
+						color="white"
+						variant="outline"
 						alignItems="center"
 						bg="brand.200"
-						px={10}
+						px="100%"
+						background="linear-gradient(to right, #0077B6, #0ABAB5)"
 					>
 						Cadastrar
+					</Button>
+				</Flex>
+
+				<Text align="center" p={2}>
+					OU
+				</Text>
+
+				<Flex flexDirection="column" borderRadius={8} alignItems="center">
+					<Button
+						color="white"
+						type="submit"
+						variant="solid"
+						alignItems="center"
+						px="100%"
+						bg="brand.200"
+					>
+						<Icon as={AiFillLinkedin} m={1} />
+						Cadastrar com LinkedIn
 					</Button>
 				</Flex>
 			</Box>

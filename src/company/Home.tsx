@@ -1,7 +1,7 @@
 import { Box, Button, Flex, HStack, Link } from '@chakra-ui/react';
 import { Fragment } from 'react';
-import { Header } from '../company/components/header';
 import { Landing } from '../company/pages/home/landing';
+import { Header } from './components/header';
 import { Footer } from './components/Intro/footer';
 
 export const Company = () => (

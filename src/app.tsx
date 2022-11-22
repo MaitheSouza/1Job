@@ -4,9 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import { Cadastro } from './candidates/Cadastro';
 import { Home } from './candidates/Home';
 import { Login } from './candidates/Login';
-import { Cadastro1 } from './company/Cadastro';
+import { CadastroEmpresa } from './company/Cadastro';
 import { Company } from './company/Home';
-import { Login1 } from './company/Login';
+import { LoginEmpresa } from './company/Login';
 import { Logged } from './company/pages/home/logged/home';
 import { CreateJob } from './company/pages/home/logged/jobs/create';
 import { Jobs } from './company/pages/home/logged/jobs/list';
@@ -56,8 +56,8 @@ export const App = () => {
 						</Route>
 					</Fragment>
 				)}
-				<Route path="cadastro" element={<Cadastro1 />} />
-				<Route path="login" element={<Login1 />} />
+				<Route path="cadastro" element={<CadastroEmpresa />} />
+				<Route path="login" element={<LoginEmpresa />} />
 			</Route>
 			<Route path="*" element={<p>Não encontrado.</p>} />
 		</Routes>

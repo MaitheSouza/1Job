@@ -27,7 +27,7 @@ export const ServiceCard = ({
 			p={4}
 			pb={8}
 			w="full"
-			maxW="25%"
+			maxW="30%"
 			align="center"
 			ml="10px"
 			bg="white"
@@ -35,13 +35,21 @@ export const ServiceCard = ({
 			<Box h="100%" w="100%">
 				<HStack>
 					<Image src="images/IconRecrutamentoInterno.png" />
+					<Heading
+						color="#171923"
+						fontSize={20}
+						letterSpacing="3px"
+						pt="5px"
+						p={5}
+					>
+						{heading}
+					</Heading>
 				</HStack>
-				<Heading color="blue.800" fontSize={20} letterSpacing="3px" pb="20px">
-					{heading}
-				</Heading>
-				<Text color="black">{description}</Text>
+				<Text color="black" pt="10px">
+					{description}
+				</Text>
 			</Box>
-			<Link display="flex" alignItems="center" py={3} color="blue.800">
+			<Link className="g-text" display="flex" alignItems="center" pt={5}>
 				<Icon as={BsSearch} color="brand.100" mr="10px" />
 				Saiba Mais
 			</Link>
